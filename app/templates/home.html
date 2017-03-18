@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<section class="chat-rooms">
-<h1 class="chat-title">Bloc Chat</h1>
- <div ng-repeat="room in home.rooms">
-     <h3>{{ room.$id }}</h3>
-     <p>{{ room.$value }}</p>
+<section class="chat-room">
+    <div class="chat-title">
+        <h2>Bloc Chat</h2>
+    </div>
+    <span class="new-room-button"><button class="btn btn-primary" ng-click="addRoom()">New Room</button></span>
+ <div class="room-list" ng-repeat="room in rooms">
+     <h3>{{ room.$value }} {{ room.name }}</h3>
  </div>
 </section>

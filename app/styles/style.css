@@ -1,0 +1,30 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+}
+.chat-room {
+	width: 20%;
+	background-color: cadetblue;
+	height: 100%;
+}
+
+.chat-title {
+	position: relative;
+	top: 45px;
+	left: 40px;
+	font-weight: bold;
+}
+
+.new-room-button {
+    position: relative;
+    top: 5px;
+    left: 220px;
+}
+
+.room-list {
+    position: relative;
+    padding: 0.25rem;
+    top: 40px;
+}
