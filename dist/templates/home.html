@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<section class="chat-room">
+<div class="chat-room">
     <div class="chat-title">
         <h2>Bloc Chat</h2>
     </div>
     <span class="new-room-button"><button class="btn btn-primary" ng-click="addRoom()">New Room</button></span>
- <div class="room-list" ng-repeat="room in rooms">
-     <h3>{{ room.$value }} {{ room.name }}</h3>
- </div>
+ <ul class="room-list">
+     <li ng-repeat="room in rooms" ng-click="selectRoom(room)" ng-class="{current:room === activeRoom}"><button type="button" class="btn btn-success">{{ room.name }}</button></li>
+ </ul>
+</div>
+<section class="chat-area">
+    <div>
+        <h2>{{ activeRoom.name }}</h2>
+        <div class="messages" ng-repeat="message in activeRoomMessages">
+            <div class="username">{{ message.username }}</div>
+            <div class="timestamp">{{ message.sentAt|date:short }}</div>
+            <div>
+                <p>{{ message.content }}</p>
+            </div>
+        </div>
+    </div>
 </section>

@@ -5,7 +5,7 @@
         };
         
         $scope.create = function() {
-            Room.add($scope.newRoom);
+            Room.add({name:$scope.name});
             $uibModalInstance.close();
         };
     }

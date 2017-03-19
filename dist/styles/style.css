@@ -1,13 +1,9 @@
-html {
-    height: 100%;
-}
-body {
-    height: 100%;
-}
 .chat-room {
+    left: 0%;
 	width: 20%;
 	background-color: cadetblue;
-	height: 100%;
+    position: fixed;
+    height: 100%;
 }
 
 .chat-title {
@@ -25,6 +21,16 @@ body {
 
 .room-list {
     position: relative;
-    padding: 0.25rem;
     top: 40px;
+    list-style-type: none;
+}
+
+.room-list li {
+    margin-top: 5px;
+}
+
+.chat-area {
+    margin-left: 21%;
+    width: 75%;
+    text-align: left;
 }
