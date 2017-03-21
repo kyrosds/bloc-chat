@@ -5,7 +5,7 @@
     </div>
     <span class="new-room-button"><button class="btn btn-primary" ng-click="addRoom()">New Room</button></span>
  <ul class="room-list">
-     <li ng-repeat="room in rooms" ng-click="selectRoom(room)" ng-class="{current:room === activeRoom}"><button type="button" class="btn btn-success">{{ room.name }}</button></li>
+     <li ng-repeat="room in rooms" ng-click="selectRoom(room)"><button type="button" class="btn btn-success">{{ room.name }}</button></li>
  </ul>
 </div>
 <section class="chat-area">
@@ -19,4 +19,5 @@
             </div>
         </div>
     </div>
+    <input type="text" ng-model="message"><button ng-click="sendMessage(message)">Send</button>
 </section>

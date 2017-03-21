@@ -4,8 +4,8 @@
             $uibModalInstance.dismiss();
         };
         
-        $scope.create = function() {
-            Room.add({name:$scope.name});
+        $scope.create = function(name) {
+            Room.add({name: name});
             $uibModalInstance.close();
         };
     }

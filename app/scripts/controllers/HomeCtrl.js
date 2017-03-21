@@ -4,7 +4,6 @@
         
         $scope.addRoom = function() {
             $uibModal.open({
-                animation: true,
                 templateUrl: '/templates/new-room.html',
                 size: 'sm',
                 controller: 'NewRoomCtrl'
