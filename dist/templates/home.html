@@ -4,19 +4,27 @@
         <h2>Bloc Chat</h2>
     </div>
     <span class="new-room-button"><button class="btn btn-primary" ng-click="addRoom()">New Room</button></span>
- <ul class="room-list">
-     <li ng-repeat="room in rooms" ng-click="selectRoom(room)"><button type="button" class="btn btn-success">{{ room.name }}</button></li>
- </ul>
+    <ul class="room-list">
+        <li ng-repeat="room in rooms" ng-click="selectRoom(room)"><button type="button" class="btn btn-success">{{ room.name }}</button></li>
+    </ul>
 </div>
 <section class="chat-area">
-    <div>
+    <div class="chat-body">
         <h2>{{ activeRoom.name }}</h2>
         <div class="messages" ng-repeat="message in activeRoomMessages">
             <div class="username">{{ message.username }}</div>
             <div class="timestamp">{{ message.sentAt|date:short }}</div>
-            <div>
+            <div class="user-message">
                 <p>{{ message.content }}</p>
             </div>
         </div>
     </div>
+    <div class="text-input">
+        <div class="input-group input-group-md" ng-show="activeRoom.name">
+            <input class="form-control input-md" type="text" ng-model="newMessage">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary btn-md" ng-disabled="!newMessage" ng-click="sendMessage(newMessage)">Send</button>
+                </span>
+            </div>
+        </div>
 </section>

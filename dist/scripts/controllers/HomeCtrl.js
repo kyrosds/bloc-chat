@@ -1,5 +1,5 @@
 (function() {
-    function HomeCtrl($scope, Room, Message, $uibModal) {
+    function HomeCtrl($scope, Room, Message, $uibModal, $cookies) {
         $scope.rooms = Room.all;
         
         $scope.addRoom = function() {
@@ -17,9 +17,20 @@
             $scope.activeRoom = room;
             $scope.activeRoomMessages = Message.getByRoomId(room.$id);
         };
+        
+        $scope.sendMessage = function(newMessage) {
+            Message.send(
+                $scope.newMessage,
+                $scope.activeRoom.$id,
+                $cookies.get('blocChatCurrentUser'),
+                firebase.database.ServerValue.TIMESTAMP
+            );
+            $scope.newMessage = '';
+        };
+        
     }
     
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['$scope', 'Room', 'Message', '$uibModal', HomeCtrl]);
+        .controller('HomeCtrl', ['$scope', 'Room', 'Message', '$uibModal', '$cookies', HomeCtrl]);
 })();
